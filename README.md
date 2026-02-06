@@ -1,11 +1,13 @@
 # Morinus Reforge (macOS)
 
 This is a macOS-focused refurbish of the legacy Morinus codebase to run on modern Python 3 and wxPython.
+Orignal codebase: https://sites.google.com/site/pymorinus
 
 ## Status
 - Python 3 + wxPython 4 compatibility shims added.
 - Swiss Ephemeris via `pyswisseph` (shimmed as `sweastrology`).
 - Pillow compatibility shims for legacy PIL imports.
+- Only horoscope creation and primary direction are sorted out. Other features are still under construction.
 
 ## Quick start
 ```sh
