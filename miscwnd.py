@@ -113,7 +113,7 @@ class MiscWnd(commonwnd.CommonWnd):
 					ayanlon = data[i]-self.chart.ayanamsha
 					ayanlon = util.normalize(ayanlon)
 					d, m, s = util.decToDeg(ayanlon)
-				sign = d/chart.Chart.SIGN_DEG
+				sign = d//chart.Chart.SIGN_DEG
 				pos = d%chart.Chart.SIGN_DEG
 				wsp,hsp = draw.textsize(' ', self.fntText)
 				txtsign = self.signs[sign]
@@ -161,7 +161,7 @@ class MiscWnd(commonwnd.CommonWnd):
 				lon = util.normalize(lon)
 
 			d, m, s = util.decToDeg(lon)
-			sign = d/chart.Chart.SIGN_DEG
+			sign = d//chart.Chart.SIGN_DEG
 			pos = d%chart.Chart.SIGN_DEG
 			wsp,hsp = draw.textsize(' ', self.fntText)
 			wsg,hsg = draw.textsize(self.signs[sign], self.fntMorinus)
@@ -175,7 +175,6 @@ class MiscWnd(commonwnd.CommonWnd):
 		wxImg = wx.EmptyImage(img.size[0], img.size[1])
 		wxImg.SetData(img.tostring())
 		self.buffer = wx.BitmapFromImage(wxImg)
-
 
 
 
