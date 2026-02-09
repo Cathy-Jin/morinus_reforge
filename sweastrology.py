@@ -91,7 +91,21 @@ def swe_houses_ex(tjd_ut, iflag, geolat, geolon, hsys):
 		return 0, cusps, ascmc
 	return ret
 swe_houses_armc = houses_armc
-swe_house_pos = house_pos
+def swe_house_pos(armc, geolat, eps, hsys, lon, lat):
+	if isinstance(hsys, int):
+		hsys = chr(hsys)
+	if isinstance(hsys, str):
+		try:
+			hsys_b = hsys.encode('ascii')
+		except Exception:
+			hsys_b = hsys
+	else:
+		hsys_b = hsys
+	try:
+		hpos = house_pos(armc, geolat, eps, (lon, lat), hsys_b)
+	except Exception:
+		hpos = house_pos(armc, geolat, eps, (lon, lat), hsys_b)
+	return hpos, ''
 swe_gauquelin_sector = gauquelin_sector
 swe_sol_eclipse_where = sol_eclipse_where
 swe_lun_occult_where = lun_occult_where

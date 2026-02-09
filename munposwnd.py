@@ -182,7 +182,7 @@ class MunPosWnd(commonwnd.CommonWnd):
 					lona = util.normalize(lona)
 					d,m,s = util.decToDeg(lona)
 
-				sign = d/chart.Chart.SIGN_DEG
+				sign = d//chart.Chart.SIGN_DEG
 				pos = d%chart.Chart.SIGN_DEG
 				wsp,hsp = draw.textsize(' ', self.fntText)
 				txtsign = self.signs[sign]
@@ -208,7 +208,6 @@ class MunPosWnd(commonwnd.CommonWnd):
 				draw.text((x+summa+(offs[i]-w)/2, y+(self.LINE_HEIGHT-h)/2), txt, fill=txtclr, font=self.fntText)
 
 			summa += offs[i]
-
 
 
 
